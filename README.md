@@ -27,20 +27,6 @@ Configure SMTP in mail.php (host/port/username/password, From).
 Open:
 http://localhost/MEDICINE-ROUTINE-WEBSITE-TU-main/
 
-Endpoint (ESP32)
-
-GET /get_schedule.php?user_id=3&date=YYYY-MM-DD
-→ {
-     "id": 12,
-     "medicine_name": "Levothyroxin 50",
-     "scheduled_date": "2025-09-10 08:00:00"
-   }
-For one-time routines the backend uses scheduled_date (DATETIME).
-
-For recurring routines it uses scheduled_time (TIME) within start_date..end_date.
-
-Results exclude doses already present in medicine_taken for the same day/time.
-
 Email Notifications (Scheduled)
 
 cron_notify.php finds upcoming doses and sends emails via PHPMailer.
@@ -93,6 +79,3 @@ MIT (optional).
 “Full code: https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main
  — submission tag v1.0.0.”
 
-ESP32 (optional)
-
-Firmware fetches the daily schedule via the endpoint above and performs a 3-phase reminder (green LED → buzzer → red LED). Button press acknowledges locally on the device.
