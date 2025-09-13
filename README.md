@@ -23,11 +23,10 @@ composer install
 Create DB (e.g. medicine_db) → import DB.sql.
 Copy db.sample.php → db.php and fill DB credentials.
 Configure SMTP in mail.php (host/port/username/password, From).
-
 Start Apache/MySQL and open
 http://localhost/MEDICINE-ROUTINE-WEBSITE-TU-main/
 
-Endpoint (ESP32)
+**Endpoint (ESP32)**
 GET /get_schedule.php?user_id=3&date=YYYY-MM-DD
 Example response:
 {
@@ -49,10 +48,8 @@ Program:   C:\xampp\php\php.exe
 Arguments: "C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main\cron_notify.php"
 Start in:  C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main
 
-Database (summary)
-
+**Database (summary)**
 Key tables defined in DB.sql:
-
 users — accounts
 medicine_routines — per-user routines
 mode ENUM('one','recurring')
@@ -62,7 +59,7 @@ medicine_taken — confirmed intakes: routine_id, taken_date, taken_at
 activity_log — app events (login, medicine_add, email_sent, …)
 Indexes support the queries used in get_schedule.php.
 
-Files (flat layout)
+**Files (flat layout)**
 index.php
 login.php / register.php / profile.php / logout.php
 get_schedule.php
@@ -73,12 +70,12 @@ DB.sql
 db.sample.php    # copy to db.php locally (do NOT commit)
 composer.json / composer.lock
 
-ESP32 firmware (note)
+**ESP32 firmware (note)**
 The ESP32 firmware is not included in this public repository. It fetches the
 daily schedule via GET /get_schedule.php and implements a 3-phase reminder
 (green LED → buzzer → red LED). Full source is available on request / in thesis appendix.
 
-Security
+**Security**
 Do not commit secrets (db.php, SMTP passwords). Keep db.php local.
 Prototype runs on HTTP. For production use HTTPS/TLS, stronger auth, and rate limiting.
 License & Citation
@@ -86,6 +83,7 @@ License & Citation
 MIT (optional).
 “Full code: https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main
  — submission tag v1.0.0.”
+
 
 
 
