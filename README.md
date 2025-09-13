@@ -41,10 +41,13 @@ One-time routines use scheduled_date (DATETIME).
 Recurring routines use scheduled_time (TIME) within start_date..end_date.
 Results exclude doses already present in medicine_taken for the same day/time.
 
-Email Notifications (Scheduled)
+
+**Email Notifications**
+```markdown
 cron_notify.php finds upcoming doses and sends emails via PHPMailer.
 
-Windows Task Scheduler
+**Windows Task Scheduler**
+```text
 Program:   C:\xampp\php\php.exe
 Arguments: "C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main\cron_notify.php"
 Start in:  C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main
@@ -86,3 +89,4 @@ License & Citation
 MIT (optional).
 “Full code: https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main
  — submission tag v1.0.0.”
+
