@@ -1,0 +1,14 @@
+db.php
+.env
+*.log
+cron.log
+/vendor/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+esp32/secrets.h
+esp32/.pio/
+esp32/*.bin
+esp32/*.elf
