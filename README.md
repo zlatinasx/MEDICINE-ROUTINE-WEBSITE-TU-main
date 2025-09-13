@@ -1,4 +1,4 @@
-# Medication Routine — TU Thesis (ESP32 + PHP/MySQL)
+# Medication Routine — TU Thesis (PHP/MySQL)
 
 Prototype for medication reminders with an ESP32 device and a PHP/MySQL backend (XAMPP).
 > **Note:** Device-side “Mark as taken” is user-driven; the backend stores taken entries in `medicine_taken` only when recorded via the web UI (or future API).
@@ -19,12 +19,10 @@ Prototype for medication reminders with an ESP32 device and a PHP/MySQL backend 
 # In C:\xampp\htdocs
 git clone https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main.git
 
-Start Apache and MySQL from XAMPP.
-Open phpMyAdmin → create DB (e.g. medicine_db) → import DB.sql.
-Copy db.sample.php → db.php and fill DB credentials.
-Configure SMTP in mail.php (host/port/username/password, From).
-
-Open:
+Create DB (e.g. medicine_db) → import DB.sql
+Copy db.sample.php → db.php and fill DB credentials
+Configure SMTP in mail.php (host/port/username/password, From)
+Start Apache/MySQL → open
 http://localhost/MEDICINE-ROUTINE-WEBSITE-TU-main/
 
 Email Notifications (Scheduled)
@@ -46,14 +44,6 @@ Key tables defined in DB.sql:
 users — accounts
 
 medicine_routines — per-user routines
-
-mode ENUM('one','recurring')
-
-scheduled_date (one-time) or scheduled_time + start_date..end_date (recurring)
-
-medicine_taken — confirmed intakes (created by web/UX; used to avoid repeats)
-
-routine_id, taken_date, taken_at, source
 
 Indexes support the queries used in get_schedule.php.
 
@@ -78,4 +68,5 @@ License & Citation
 MIT (optional).
 “Full code: https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main
  — submission tag v1.0.0.”
+
 
