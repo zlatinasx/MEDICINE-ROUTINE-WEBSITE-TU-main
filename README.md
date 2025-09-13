@@ -14,8 +14,6 @@ Prototype for medication reminders with an ESP32 device and a PHP/MySQL backend 
 ---
 
 ## Quick Start (Windows + XAMPP)
-
-```bash
 # In C:\xampp\htdocs
 git clone https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main.git
 cd MEDICINE-ROUTINE-WEBSITE-TU-main
@@ -43,11 +41,9 @@ Results exclude doses already present in medicine_taken for the same day/time.
 
 
 **Email Notifications**
-```markdown
 cron_notify.php finds upcoming doses and sends emails via PHPMailer.
 
 **Windows Task Scheduler**
-```text
 Program:   C:\xampp\php\php.exe
 Arguments: "C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main\cron_notify.php"
 Start in:  C:\xampp\htdocs\MEDICINE-ROUTINE-WEBSITE-TU-main
@@ -89,4 +85,5 @@ License & Citation
 MIT (optional).
 “Full code: https://github.com/zlatinasx/MEDICINE-ROUTINE-WEBSITE-TU-main
  — submission tag v1.0.0.”
+
 
